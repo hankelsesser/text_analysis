@@ -1,1 +1,3 @@
-print("hello world")
+def get_songs(file):
+    for lines in file:
+

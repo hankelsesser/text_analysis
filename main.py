@@ -1,4 +1,4 @@
 def get_songs(file):
-    for lines in file:
-        pass
-print("this is a test")
+    songs = open(file).readlines()
+    return(songs)
+print(get_songs("songs2010.txt"))

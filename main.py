@@ -1,7 +1,7 @@
 def get_songs(file):
     songs = open(file).readlines()
     return(songs)
-rawsongs = get_songs("songs2010.txt"))
+rawsongs = get_songs("songs2010.txt")
 
 def get_info(string):
     songs = []

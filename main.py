@@ -6,16 +6,14 @@ rawsongs = get_songs("songs2010.txt")
 def get_info(string):
     songs = []
     for i in range(len(string)):
-        song = ""
+        song = []
         firstq = string[i].find('"')
         #find author
-        song += string[i][:firstq]
-        song += "-"
+        song.append(string[i][:firstq])
         #find title
-        song += string[i][firstq:(string[i].find('"', firstq+1))]
-        song+="  "
+        song.append(string[i][firstq:(string[i].find('"', firstq+1))])
         #find number of weeks
-        song+= string[i][string[i].find('"', firstq+1):string[i].find("n")-1]
+        song.append(string[i][string[i].find('"', firstq+1):string[i].find("n")-1])
 
         songs.append(song)
     return(songs)

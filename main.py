@@ -20,12 +20,12 @@ def get_info(string):
 print(get_info(rawsongs))
 
 #hi
-def get_sentences(file):
-  startP = 0
-  sentences = []
-  for i in range(len(file)):
-    lastP = file.find(".", startP)
-    nextP = file.find(".", lastP+1)
-    startP = nextP+1
-    sentences.append(file[lastP+1:nextP+1])
-  return(sentences)
+# def get_sentences(file):
+#   startP = 0
+#   sentences = []
+#   for i in range(len(file)):
+#     lastP = file.find(".", startP)
+#     nextP = file.find(".", lastP+1)
+#     startP = nextP+1
+#     sentences.append(file[lastP+1:nextP+1])
+#   return(sentences)

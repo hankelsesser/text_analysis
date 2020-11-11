@@ -17,6 +17,6 @@ def get_info(string):
         #find number of weeks
         song+= string[i][string[i].find('"', firstq+1):string[i].find("n")-1]
 
-        string.append(song)
+        songs.append(song)
 
 print(get_info(rawsongs))

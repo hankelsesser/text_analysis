@@ -5,7 +5,7 @@ rawsongs = get_songs("songs2010.txt")
 
 def get_info(string):
     songs = []
-    for i in (len(string)):
+    for i in range(len(string)):
         song = ""
         firstq = string[i].find('"')
         #find author

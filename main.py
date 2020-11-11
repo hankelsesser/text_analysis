@@ -18,5 +18,6 @@ def get_info(string):
         song+= string[i][string[i].find('"', firstq+1):string[i].find("n")-1]
 
         songs.append(song)
+    return(songs)
 
 print(get_info(rawsongs))

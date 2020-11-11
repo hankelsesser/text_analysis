@@ -11,7 +11,7 @@ def get_info(string):
         #find author
         song.append(string[i][:firstq-1])
         #find title
-        song.append(string[i][firstq:(string[i].find('"', firstq+1))])
+        song.append(string[i][firstq+1:(string[i].find('"', firstq+1))])
         #find number of weeks
         song.append(string[i][string[i].find('"', firstq+1)+1:string[i].find("n")])
 

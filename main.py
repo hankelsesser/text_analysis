@@ -13,9 +13,9 @@ def get_info(string):
         #find title
         song += string[i][firstq:(string[i].find('"', firstq+1))]
         song+="  "
-        songs+= string[i][string[i].find('"', firstq+1):string[i].find("n")-1]
+        song+= string[i][string[i].find('"', firstq+1):string[i].find("n")-1]
 
-        songs.append(song)
+        string.append(song)
 
 print(get_info(rawsongs))
 

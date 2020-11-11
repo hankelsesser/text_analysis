@@ -13,7 +13,7 @@ def get_info(string):
         #find title
         song += string[i][firstq:(string[i].find('"', firstq+1))]
         song+="  "
-        songs+= string[i][string[i].find('"', firstq+1):string[i].find("\n"))]
+        songs+= string[i][string[i].find('"', firstq+1):string[i].find("\n")]
 
         songs.append(song)
 

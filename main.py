@@ -23,7 +23,7 @@ def get_names(file1, file2, file3, file4, option):
     songs.append(file3)
     songs.append(file4)
     preference_index = 0 #index of the artist
-    if option == "song": preference_index = 1 #changes to index of song title
+    if option == "title": preference_index = 1 #changes to index of song title
     for document in range(4):
         for song in range(17):
             names += songs[document][song][preference_index]
@@ -54,7 +54,18 @@ def sort_freqs(freqs):
         entry.append(freqs[key])
         entry.append(key)
         letters.append(entry)
-    return(sorted(letters, "reverse"))
+    return(sorted(letters, reverse = True))
+
+def get_length_sucess_data(file, option):
+    weeks = []
+    length = []
+    preference_index = 0
+    if option == "title": preference_index = 1
+    for song in file:
+        weeks.append(song[2])
+        length.append(len(song[preference_index]))
+    return(length, weeks)
+
 
 
 def main():
@@ -64,7 +75,7 @@ def main():
     songs2010 = get_info("songs2010.txt")
     names = get_names(songs1980, songs1990, songs2000, songs2010, "artist")
     freqs = get_freqs(clean_string(names))
-    print(sort_freqs(freqs))
+    print(get_length_sucess_data(songs1980, "title")
 main()
 
 

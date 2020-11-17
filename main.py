@@ -75,8 +75,8 @@ def create_graph(x, y, x1, y1, x2, y2, x3, y3):
     plt.stem(x1, y1, linefmt = "green", markerfmt='v')
     plt.stem(x2, y2, linefmt = "blue", markerfmt='o')
     plt.stem(x3, y3, linefmt = "teal", markerfmt='D')
-
-    plt.xlabel("Characters in a title")
+    plt.title("Popularity of Songs Verses the Lengths of Their Titles."
+    plt.xlabel("Characters in a Title")
     plt.ylabel("Weeks at #1")
     plt.show()
 

@@ -18,7 +18,7 @@ def get_info(string):
         song.append(string[i][firstq+1:secondq])
         #find number of weeks
         #song.append(string[i][string[i].find('"', firstq+1)+1:string[i].find("n")])
-        song.append(string[i][secondq:].replace("/n", ""))
+        song.append(string[i][secondq:].replace("\n", ""))
         songs.append(song)
 
     return(songs)

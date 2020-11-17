@@ -18,7 +18,10 @@ def get_info(file):
 def get_names(file1, file2, file3, file4, option):
     songs = []
     names = ""
-    songs.append(file1, file2, file3, file4)
+    songs.append(file1)
+    songs.append(file2)
+    songs.append(file3)
+    songs.append(file4)
     preference_index = 0
     if option == "song": preference_index = 1
     for document in range(4):

@@ -33,7 +33,7 @@ def main():
     songs1990 = get_info("songs1990.txt")
     songs2000 = get_info("songs2000.txt")
     songs2010 = get_info("songs2010.txt")
-    print(get_names(songs1980, songs1990, songs2000, songs2010))
+    print(get_names(songs1980, songs1990, songs2000, songs2010, "artist"))
 main()
 
 

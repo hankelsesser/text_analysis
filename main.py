@@ -8,20 +8,21 @@ def get_song(file):
     songs = open(file).readlines()
     return(get_info(songs))
 
-def get_info(string):
+def get_info(file):
+    rawdocument = get_songs(file)
     songs = []
-    for i in range(len(string)):
+    for i in range(len(rawdocument)):
         song = []
         #location of first quotation mark
-        firstq = string[i].find('"')
+        firstq = rawdocument[i].find('"')
         #location of second quotation mark
-        secondq = string[i].find('"', firstq+1)
+        secondq = rawdocument[i].find('"', firstq+1)
         #find author
-        song.append(string[i][:firstq-1])
+        song.append(rawdocument[i][:firstq-1])
         #find title
-        song.append(string[i][firstq+1:secondq])
+        song.append(rawdocument[i][firstq+1:secondq])
         #find number of weeks at #1
-        song.append(string[i][secondq+2:-1])
+        song.append(rawdocument[i][secondq+2:-1])
         songs.append(song)
     return(songs)
 

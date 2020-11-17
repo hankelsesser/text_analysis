@@ -79,7 +79,7 @@ def get_length_sucess_data(file, option):
 def make_sequence(length):
     sequence = []
     for i in range(1, length):
-        sequence.append[i]
+        sequence.append[int(i)]
     return(sequence, sequence, sequence, sequence)
 
 def orginize_data(file1, file2, file3, file4, function, option):

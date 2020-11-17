@@ -4,7 +4,7 @@ def get_songs(file):
 rawsongs = get_songs("songs2010.txt")
 
 def get_info(string):
-    # songs = string.split('/n')
+    songs = []
     # for i in range(len(songs)):
     #     songs[i] = songs[i].split()
 

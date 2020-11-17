@@ -6,7 +6,7 @@ songs2010 = getsong("songs2010.txt")
 
 def get_song(file):
     songs = open(file).readlines()
-    return(get_info(songs))
+    return(songs)
 
 def get_info(file):
     rawdocument = get_songs(file)

@@ -78,7 +78,7 @@ def orginize_data(file1, file2, file3, file4, function):
 
 
 def create_title_sucess_graph(file1, file2, file3, file4):
-    x1, y1, x2, y2, x3, y3, x4, y4 = orginize_data(file1, file2, file3, file4, get_length_sucess_data())
+    x1, y1, x2, y2, x3, y3, x4, y4 = orginize_data(file1, file2, file3, file4, get_length_sucess_data)
     plt.stem(x1, y1, linefmt = "blue", markerfmt='s', label='Songs from the 1980s')
     plt.stem(x2, y2, linefmt = "green", markerfmt='v',label='Songs from the 1990s')
     plt.stem(x3, y3, linefmt = "red", markerfmt='o',label='Songs from the 2000s')

@@ -71,10 +71,10 @@ def get_length_sucess_data(file, option):
 
 def create_graph(x, y, x1, y1, x2, y2, x3, y3):
     #plt.plot('length of title', 'weeks at #1', data=dataset)
-    plt.stem(x, y, color = "green")
-    plt.stem(x1, y1, color = "blue")
-    plt.stem(x2, y2, color = "yellow")
-    plt.stem(x3, y3, color = "red")
+    plt.plot(x, y, color = "green")
+    plt.plot(x1, y1, color = "blue")
+    plt.plot(x2, y2, color = "yellow")
+    plt.plot(x3, y3, color = "red")
 
     plt.xlabel("Characters in a title")
     plt.ylabel("Weeks at #1")

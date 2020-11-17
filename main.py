@@ -127,8 +127,7 @@ def create_popular_letters_graph(file1, file2, file3, file4):
     plt.show()
 
 def main():
-    songs1980 =
-     get_info("songs1980.txt")
+    songs1980 = get_info("songs1980.txt")
     songs1990 = get_info("songs1990.txt")
     songs2000 = get_info("songs2000.txt")
     songs2010 = get_info("songs2010.txt")

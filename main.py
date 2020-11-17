@@ -13,6 +13,7 @@ def get_info(string):
         #find title
         song.append(string[i][firstq+1:(string[i].find('"', firstq+1))])
         #find number of weeks
+        print(string)
         song.append(string[i][string[i].find('"', firstq+1)+1:string[i].find("n")])
 
         songs.append(song)

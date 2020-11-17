@@ -1,9 +1,3 @@
-
-songs1980 = get_info("songs1980.txt")
-songs1990 = get_info("songs1990.txt")
-songs2000 = get_info("songs2000.txt")
-songs2010 = get_info("songs2010.txt")
-
 def get_song(file):
     songs = open(file).readlines()
     return(songs)
@@ -25,6 +19,14 @@ def get_info(file):
         song.append(rawdocument[i][secondq+2:-1])
         songs.append(song)
     return(songs)
+
+
+songs1980 = get_info("songs1980.txt")
+songs1990 = get_info("songs1990.txt")
+songs2000 = get_info("songs2000.txt")
+songs2010 = get_info("songs2010.txt")
+
+
 
 print(songs1980[1])
 

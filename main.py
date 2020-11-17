@@ -54,7 +54,7 @@ def sort_freqs(freqs):
         entry.append(freqs[key])
         entry.append(key)
         letters.append(entry)
-    return(sorted(letters))
+    return(sorted(letters), "reverse")
 
 
 def main():

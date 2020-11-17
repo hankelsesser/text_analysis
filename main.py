@@ -71,6 +71,7 @@ def get_length_sucess_data(file, option):
 
 def create_graph(x, y):
     plt.plot(x, y)
+    plt.show()
 
 
 

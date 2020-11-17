@@ -18,18 +18,12 @@ def get_info(file):
         songs.append(song) #append song to list of songs
     return(songs)
 
-def get_names(file1, file2, file3, file4, option):
-    songs = []
+def get_names(file, option):
     names = ""
-    songs.append(file1)
-    songs.append(file2)
-    songs.append(file3)
-    songs.append(file4)
     preference_index = 0 #index of the artist
     if option == "title": preference_index = 1 #changes to index of song title
-    for document in range(4):
         for song in range(17):
-            names += songs[document][song][preference_index]
+            names += file[song][preference_index]
     return(names)
 
 def clean_string(string):
@@ -58,6 +52,18 @@ def sort_freqs(freqs):
         entry.append(key)
         letters.append(entry)
     return(sorted(letters, reverse = True))
+
+def get_freqs_data(file, option):
+    letters = []
+    weeks = []
+    string = clean_string(get_names(file, opiton))
+    freqs = get_freqs(string)
+    combined_data = sort_freqs(freqs)
+    for i in range(len(combined_data)):
+        letters.append(combined_data[i][1])
+        weeks.append(combined_data[i][0])
+    return(letters, weeks)
+
 
 def get_length_sucess_data(file, option):
     weeks = []
@@ -101,6 +107,14 @@ def create_artist_sucess_graph(file1, file2, file3, file4):
     plt.legend()
     plt.show()
 
+def create_popular_letters_graph(file1, file2, file3, file4):
+    x1, y1, x2, y2, x3, y3, x4, y4 = orginize_data(file1, file2, file3, file4, get_freqs_data, "title")
+    plt.bar(x1, y1, color = "blue", label='Songs from the 1980s')
+    plt.bar(x2, y2, color = "green", label='Songs from the 1990s')
+    plt.bar(x3, y3, color = "red", label='Songs from the 2000s')
+    plt.bar(x4, y4, color = "teal", label='Songs from the 2010s')
+    plt.legend()
+    plt.show()
 
 def main():
     songs1980 = get_info("songs1980.txt")

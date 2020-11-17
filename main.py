@@ -69,17 +69,34 @@ def get_length_sucess_data(file, option):
         length.append(len(song[preference_index]))
     return(length, weeks)
 
-def create_graph(x, y, x1, y1, x2, y2, x3, y3):
-    #plt.plot('length of title', 'weeks at #1', data=dataset)
-    plt.stem(x, y, linefmt = "blue", markerfmt='s', label='Songs from the 1980s')
-    plt.stem(x1, y1, linefmt = "green", markerfmt='v',label='Songs from the 1990s')
-    plt.stem(x2, y2, linefmt = "red", markerfmt='o',label='Songs from the 2000s')
-    plt.stem(x3, y3, linefmt = "teal", markerfmt='D',label='Songs from the 2010s')
+def orginize_data(file1, file2, file3, file4, function):
+    x1, y1 = function(file1, "title")
+    x2, y2 = function(file2, "title")
+    x3, y3 = function(file3, "title")
+    x4, y4 = function(file4, "title")
+    return(x1, y1, x2, y2, x3, y3, x4, y4)
+
+
+def create_title_sucess_graph(file1, file2, file3, file4):
+    x1, y1, x2, y2, x3, y3, x4, y4 = orginize_data(file1, file2, file3, file4, get_length_sucess_data())
+    plt.stem(x1, y1, linefmt = "blue", markerfmt='s', label='Songs from the 1980s')
+    plt.stem(x2, y2, linefmt = "green", markerfmt='v',label='Songs from the 1990s')
+    plt.stem(x3, y3, linefmt = "red", markerfmt='o',label='Songs from the 2000s')
+    plt.stem(x4, y4, linefmt = "teal", markerfmt='D',label='Songs from the 2010s')
     plt.title("Popularity of Songs Verses the Lengths of Their Titles.")
     plt.xlabel("Characters in a Title")
     plt.ylabel("Weeks at #1")
-    #plt.legend(("Square", "Arrow", "Circle", "Diamond"), ('1980', '1990', '2000', "2010"))
-    #line, = plt.plot([1, 2, 3], label='Inline label')
+    plt.legend()
+    plt.show()
+
+def create_artist_sucess_graph(x1, y1, x2, y2, x3, y3, x4, y4):
+    plt.stem(x1, y1, linefmt = "blue", markerfmt='s', label='Songs from the 1980s')
+    plt.stem(x2, y2, linefmt = "green", markerfmt='v',label='Songs from the 1990s')
+    plt.stem(x3, y3, linefmt = "red", markerfmt='o',label='Songs from the 2000s')
+    plt.stem(x4, y4, linefmt = "teal", markerfmt='D',label='Songs from the 2010s')
+    plt.title("Popularity of Songs Verses the Lengths of Their Titles.")
+    plt.xlabel("Characters in a Title")
+    plt.ylabel("Weeks at #1")
     plt.legend()
     plt.show()
 
@@ -91,11 +108,7 @@ def main():
     songs2010 = get_info("songs2010.txt")
     names = get_names(songs1980, songs1990, songs2000, songs2010, "artist")
     freqs = get_freqs(clean_string(names))
-    x, y = get_length_sucess_data(songs1980, "title")
-    x1, y1 = get_length_sucess_data(songs1990, "title")
-    x2, y2 = get_length_sucess_data(songs2000, "title")
-    x3, y3 = get_length_sucess_data(songs2010, "title")
-    create_graph(x, y, x1, y1, x2, y2, x3, y3)
+    create_title_sucess_graph(songs1980, songs1990, songs2000, songs2010)
 main()
 
 

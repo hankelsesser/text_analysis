@@ -45,7 +45,7 @@ def main():
     songs2000 = get_info("songs2000.txt")
     songs2010 = get_info("songs2010.txt")
     names = get_names(songs1980, songs1990, songs2000, songs2010, "artist")
-    print(clean(names))
+    print(clean_string(names))
 main()
 
 

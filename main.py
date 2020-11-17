@@ -71,7 +71,7 @@ def get_length_sucess_data(file, option):
 
 def create_graph(x, y):
     #plt.plot('length of title', 'weeks at #1', data=dataset)
-    plt.plot(x, y)
+    plt.stem(x, y)
     plt.xlabel("lenth of title")
     plt.ylabel("weeks at #1")
     plt.show()

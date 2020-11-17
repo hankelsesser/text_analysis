@@ -73,7 +73,7 @@ def create_graph(x, y):
     class data:
         x = x
         y = y
-    plt.plot('xlabel', 'ylabel', data=obj))
+    plt.plot('xlabel', 'ylabel', data=obj)
     plt.show()
 
 

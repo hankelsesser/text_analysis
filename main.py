@@ -1,8 +1,8 @@
 
-songs1980 = getsong("songs1980.txt")
-songs1990 = getsong("songs1990.txt")
-songs2000 = getsong("songs2000.txt")
-songs2010 = getsong("songs2010.txt")
+songs1980 = get_info("songs1980.txt")
+songs1990 = get_info("songs1990.txt")
+songs2000 = get_info("songs2000.txt")
+songs2010 = get_info("songs2010.txt")
 
 def get_song(file):
     songs = open(file).readlines()

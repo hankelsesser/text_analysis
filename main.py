@@ -70,7 +70,10 @@ def get_length_sucess_data(file, option):
     return(length, weeks)
 
 def create_graph(x, y):
-    plt.plot(x, y)
+    class data:
+        x = x
+        y = y
+    plt.plot('xlabel', 'ylabel', data=obj))
     plt.show()
 
 

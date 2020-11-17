@@ -3,7 +3,7 @@ def get_song(file):
     return(songs)
 
 def get_info(file):
-    rawdocument = get_songs(file)
+    rawdocument = get_song(file)
     songs = []
     for i in range(len(rawdocument)):
         song = []

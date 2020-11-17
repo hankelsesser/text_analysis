@@ -73,7 +73,8 @@ def create_graph(x, y):
     class data:
         x
         y
-    plt.plot('length of title', 'weeks at #1', data=data)
+    data1 = data
+    plt.plot('length of title', 'weeks at #1', data=data1)
     plt.show()
 
 

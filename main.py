@@ -22,8 +22,8 @@ def get_names(file, option):
     names = ""
     preference_index = 0 #index of the artist
     if option == "title": preference_index = 1 #changes to index of song title
-        for song in range(17):
-            names += file[song][preference_index]
+    for song in range(17):
+        names += file[song][preference_index]
     return(names)
 
 def clean_string(string):

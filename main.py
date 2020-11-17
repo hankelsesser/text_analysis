@@ -4,21 +4,22 @@ def get_songs(file):
 rawsongs = get_songs("songs2010.txt")
 
 def get_info(string):
-    songs = string.split('/n')
-    for i in range(len(songs)):
-        songs[i] = songs[i].split()
+    # songs = string.split('/n')
+    # for i in range(len(songs)):
+    #     songs[i] = songs[i].split()
 
-    # for i in range(len(string)):
-    #     song = []
-    #     firstq = string[i].find('"')
-    #     #find author
-    #     song.append(string[i][:firstq-1])
-    #     #find title
-    #     song.append(string[i][firstq+1:(string[i].find('"', firstq+1))])
-    #     #find number of weeks
-    #     song.append(string[i][string[i].find('"', firstq+1)+1:string[i].find("n")])
-    #
-    #     songs.append(song)
+    for i in range(len(string)):
+        song = []
+        firstq = string[i].find('"')
+        secondq = string[i].find('"', firstq+1)
+        #find author
+        song.append(string[i][:firstq-1])
+        #find title
+        song.append(string[i][firstq+1:secondq])
+        #find number of weeks
+        #song.append(string[i][string[i].find('"', firstq+1)+1:string[i].find("n")])
+        song.append(string[i][secondq:].replace("/n", ""))
+        songs.append(song)
 
     return(songs)
 

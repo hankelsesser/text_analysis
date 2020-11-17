@@ -56,7 +56,7 @@ def sort_freqs(freqs):
 def get_freqs_data(file, option):
     letters = []
     weeks = []
-    string = clean_string(get_names(file, opiton))
+    string = clean_string(get_names(file, option))
     freqs = get_freqs(string)
     combined_data = sort_freqs(freqs)
     for i in range(len(combined_data)):

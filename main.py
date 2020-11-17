@@ -23,6 +23,6 @@ def get_info(string):
 
     return(songs)
 
-#print(get_info(rawsongs))
-print(rawsongs)
+print(get_info(rawsongs))
+
 #commit!

@@ -71,15 +71,15 @@ def get_length_sucess_data(file, option):
 
 def create_graph(x, y, x1, y1, x2, y2, x3, y3):
     #plt.plot('length of title', 'weeks at #1', data=dataset)
-    plt.stem(x, y, linefmt = "blue", markerfmt='s')
-    plt.stem(x1, y1, linefmt = "green", markerfmt='v')
-    plt.stem(x2, y2, linefmt = "red", markerfmt='o')
-    plt.stem(x3, y3, linefmt = "teal", markerfmt='D')
+    plt.stem(x, y, linefmt = "blue", markerfmt='s', label='1980')
+    plt.stem(x1, y1, linefmt = "green", markerfmt='v',label='1990')
+    plt.stem(x2, y2, linefmt = "red", markerfmt='o',label='2000')
+    plt.stem(x3, y3, linefmt = "teal", markerfmt='D',label='2010')
     plt.title("Popularity of Songs Verses the Lengths of Their Titles.")
     plt.xlabel("Characters in a Title")
     plt.ylabel("Weeks at #1")
     #plt.legend(("Square", "Arrow", "Circle", "Diamond"), ('1980', '1990', '2000', "2010"))
-    line, = plt.plot([1, 2, 3], label='Inline label')
+    #line, = plt.plot([1, 2, 3], label='Inline label')
     plt.legend()
     plt.show()
 

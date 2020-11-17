@@ -78,7 +78,9 @@ def create_graph(x, y, x1, y1, x2, y2, x3, y3):
     plt.title("Popularity of Songs Verses the Lengths of Their Titles.")
     plt.xlabel("Characters in a Title")
     plt.ylabel("Weeks at #1")
-    plt.legend(("Square", "Arrow", "Circle", "Diamond"), ('1980', '1990', '2000', "2010"))
+    #plt.legend(("Square", "Arrow", "Circle", "Diamond"), ('1980', '1990', '2000', "2010"))
+    line, = ax.plot([1, 2, 3], label='Inline label')
+    ax.legend()
     plt.show()
 
 

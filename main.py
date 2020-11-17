@@ -60,8 +60,8 @@ def get_freqs_data(file, option):
     freqs = get_freqs(string)
     combined_data = sort_freqs(freqs)
     for i in range(len(combined_data)):
-        letters.append(combined_data[i][1])
-        weeks.append(combined_data[i][0])
+        letters.append(str(combined_data[i][1]))
+        weeks.append(int(combined_data[i][0]))
     return(letters, weeks)
 
 

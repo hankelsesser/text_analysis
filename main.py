@@ -22,8 +22,8 @@ def get_names(file1, file2, file3, file4, option):
     songs.append(file2)
     songs.append(file3)
     songs.append(file4)
-    preference_index = 0
-    if option == "song": preference_index = 1
+    preference_index = 0 #index of the artist
+    if option == "song": preference_index = 1 #changes to index of song title
     for document in range(4):
         for song in range(17):
             names += songs[document][song][preference_index]
@@ -38,6 +38,24 @@ def clean_string(string):
             clean+=string[i]
     return(clean)
 
+def get_freqs(string):
+  freqs = {}
+  for letter in string:
+    if letter in freqs:
+      freqs[letter]+=1
+    else:
+      freqs[letter]=1
+  return freqs
+
+def sort_freqs(freqs):
+    letters = []
+    for key in freqs:
+        entry = []
+        entry.append(freqs[key])
+        entry.append(key)
+        letters.append(entry)
+    return(sorted(letters))
+
 
 def main():
     songs1980 = get_info("songs1980.txt")
@@ -45,7 +63,8 @@ def main():
     songs2000 = get_info("songs2000.txt")
     songs2010 = get_info("songs2010.txt")
     names = get_names(songs1980, songs1990, songs2000, songs2010, "artist")
-    print(clean_string(names))
+    freqs = get_freqs(clean_string(names))
+    print(sort_freqs(freqs))
 main()
 
 

@@ -71,8 +71,8 @@ def get_length_sucess_data(file, option):
 
 def create_graph(x, y):
     class data:
-        x = x
-        y = y
+        x
+        y
     plt.plot('xlabel', 'ylabel', data=obj)
     plt.show()
 

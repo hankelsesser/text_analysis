@@ -78,7 +78,7 @@ def create_graph(x, y, x1, y1, x2, y2, x3, y3):
     plt.title("Popularity of Songs Verses the Lengths of Their Titles.")
     plt.xlabel("Characters in a Title")
     plt.ylabel("Weeks at #1")
-    legend((line1, line2, line3), ('label1', 'label2', 'label3'))
+    plt.legend((line1, line2, line3), ('label1', 'label2', 'label3'))
     plt.show()
 
 

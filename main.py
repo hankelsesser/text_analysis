@@ -29,6 +29,14 @@ def get_names(file1, file2, file3, file4, option):
             names += songs[document][song][preference_index]
     return(names)
 
+def clean_string(string):
+    string = string.lower()
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    clean = ""
+    for i in range(len(string)):
+        if string[i] in alphabet:
+            clean+=string[i]
+    return(clean)
 
 
 def main():
@@ -36,7 +44,8 @@ def main():
     songs1990 = get_info("songs1990.txt")
     songs2000 = get_info("songs2000.txt")
     songs2010 = get_info("songs2010.txt")
-    print(get_names(songs1980, songs1990, songs2000, songs2010, "artist"))
+    names = get_names(songs1980, songs1990, songs2000, songs2010, "artist")
+    print(clean(names))
 main()
 
 

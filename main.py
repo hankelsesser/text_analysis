@@ -69,11 +69,15 @@ def get_length_sucess_data(file, option):
         length.append(len(song[preference_index]))
     return(length, weeks)
 
-def create_graph(x, y):
+def create_graph(x, y, x1, y1, x2, y2, x3, y3):
     #plt.plot('length of title', 'weeks at #1', data=dataset)
-    plt.stem(x, y)
-    plt.xlabel("lenth of title")
-    plt.ylabel("weeks at #1")
+    plt.stem(x, y, color = "green")
+    plt.stem(x1, y1, color = "blue")
+    plt.stem(x2, y2, color = "yellow")
+    plt.stem(x3, y3, color = "red")
+
+    plt.xlabel("Characters in a title")
+    plt.ylabel("Weeks at #1")
     plt.show()
 
 
@@ -84,8 +88,11 @@ def main():
     songs2010 = get_info("songs2010.txt")
     names = get_names(songs1980, songs1990, songs2000, songs2010, "artist")
     freqs = get_freqs(clean_string(names))
-    lengths, weeks = get_length_sucess_data(songs1980, "title")
-    create_graph(lengths, weeks)
+    x, y = get_length_sucess_data(songs1980, "title")
+    x1, y1 = get_length_sucess_data(songs1990, "title")
+    x2, y2 = get_length_sucess_data(songs2000, "title")
+    x3, y3 = get_length_sucess_data(songs2010, "title")
+    create_graph(x, y, x1, y1, x2, y2, x3, y3)
 main()
 
 

@@ -124,7 +124,7 @@ def main():
     #names = get_names(songs1980, songs1990, songs2000, songs2010, "artist")
     #freqs = get_freqs(clean_string(names))
     #create_title_sucess_graph(songs1980, songs1990, songs2000, songs2010)
-    create_artist_sucess_graph(songs1980, songs1990, songs2000, songs2010)
+    create_popular_letters_graph(songs1980, songs1990, songs2000, songs2010)
 main()
 
 

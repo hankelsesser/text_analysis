@@ -74,7 +74,8 @@ def create_graph(x, y):
         xdata = x
         ydata = y
     dataset = data()
-    plt.plot('length of title', 'weeks at #1', data=dataset)
+    #plt.plot('length of title', 'weeks at #1', data=dataset)
+    plt.plot(data=dataset)
     plt.show()
 
 

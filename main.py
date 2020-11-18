@@ -62,7 +62,8 @@ def get_freqs_data(file, option):
     for i in range(len(combined_data)):
         letters.append(str(combined_data[i][1]))
         weeks.append(int(combined_data[i][0]))
-    return(letters, weeks)
+    return letters, weeks
+
 
 
 def get_length_sucess_data(file, option):

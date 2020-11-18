@@ -79,7 +79,7 @@ def get_length_sucess_data(file, option):
     for song in file:
         weeks.append(song[2])
         length.append(len(song[preference_index]))
-    return(numbers, weeks)
+    return(length, weeks)
 
 def orginize_data(file1, file2, file3, file4, function, option):
     x1, y1 = function(file1, option)
@@ -118,9 +118,12 @@ def main():
     songs1990 = get_info("songs1990.txt")
     songs2000 = get_info("songs2000.txt")
     songs2010 = get_info("songs2010.txt")
-    names = get_names(songs1980, songs1990, songs2000, songs2010, "artist")
-    freqs = get_freqs(clean_string(names))
-    create_title_sucess_graph(songs1980, songs1990, songs2000, songs2010)
+    frequent_letters_artist = sort_freqs(get_freqs(clean_string(get_names(songs1980, songs1990, songs2000, songs2010, "artist"))))
+    frequent_letters_title = sort_freqs(get_freqs(clean_string(get_names(songs1980, songs1990, songs2000, songs2010, "title"))))
+    print(frequent_letters_artist[:5])
+    print(frequent_letters_title[:5])
+    create_artist_sucess_graph(songs1980, songs1990, songs2000, songs2010)
+    #create_title_sucess_graph(songs1980, songs1990, songs2000, songs2010)
 main()
 
 

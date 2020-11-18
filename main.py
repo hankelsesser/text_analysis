@@ -76,14 +76,6 @@ def get_length_sucess_data(file, option):
     return(numbers, weeks)
 
 
-def make_sequence(length):
-    sequence = []
-    n = 1
-    for i in range(4):
-        print(i)
-        sequence.append[i]
-    return(sequence, sequence, sequence, sequence)
-
 def orginize_data(file1, file2, file3, file4, function, option):
     x1, y1 = function(file1, option)
     x2, y2 = function(file2, option)
@@ -117,12 +109,11 @@ def create_artist_sucess_graph(file1, file2, file3, file4):
     plt.show()
 
 def create_popular_letters_graph(file1, file2, file3, file4):
-    letters1, y1, letters2, y2, letters3, y3, letters4, y4 = orginize_data(file1, file2, file3, file4, get_freqs_data, "title")
-    x1, x2, x3, x4 = make_sequence(5)
-    plt.bar(x1, y1, color = "blue", tick_label = letters1,label='Songs from the 1980s')
-    #plt.bar(x2, y2, color = "green", tick_label = letters2,label='Songs from the 1990s')
-    #plt.bar(x3, y3, color = "red", tick_label = letters3,label='Songs from the 2000s')
-    #plt.bar(x4, y4, color = "teal", tick_label = letters4,label='Songs from the 2010s')
+    x1, y1, x2, y2, x3, y3, x4, y4 = orginize_data(file1, file2, file3, file4, get_freqs_data, "title")
+    plt.bar(x1, y1, color = "blue", label='Songs from the 1980s')
+    plt.bar(x2, y2, color = "green", label='Songs from the 1990s')
+    plt.bar(x3, y3, color = "red", label='Songs from the 2000s')
+    plt.bar(x4, y4, color = "teal", label='Songs from the 2010s')
     plt.legend()
     plt.show()
 

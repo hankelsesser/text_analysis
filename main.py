@@ -69,8 +69,8 @@ def get_freqs_dictionary(file, option):
 
 def get_data(freqs,option):
   sorted_dict = sorted(freqs.items(),key = lambda x:x[1],reverse=True)
-  letters = [v[0] for v in sorted_dict[:number]]
-  weeks = [v[1] for v in sorted_dict[:number]]
+  letters = [v[0] for v in sorted_dict]
+  weeks = [v[1] for v in sorted_dict]
   return (letters, weeks)
 
 

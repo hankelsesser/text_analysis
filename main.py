@@ -101,16 +101,16 @@ def create_artist_sucess_graph(file1, file2, file3, file4):
     plt.show()
 
 def main():
-    songs1980 = get_info("songs1980.txt")
-    songs1990 = get_info("songs1990.txt")
-    songs2000 = get_info("songs2000.txt")
-    songs2010 = get_info("songs2010.txt")
+    songs1980 = get_info("songs1980.txt") #data from wikipedia
+    songs1990 = get_info("songs1990.txt")#data from wikipedia
+    songs2000 = get_info("songs2000.txt") #data from wikipedia
+    songs2010 = get_info("songs2010.txt") #data from wikipedia
     frequent_letters_artist = sort_freqs(get_freqs(clean_string(get_names(songs1980, songs1990, songs2000, songs2010, "artist"))))
     frequent_letters_title = sort_freqs(get_freqs(clean_string(get_names(songs1980, songs1990, songs2000, songs2010, "title"))))
     print("most common letters in popular artist's names:",frequent_letters_artist[:5])
     print("most common letters in popular song titles:",frequent_letters_title[:5])
-    create_artist_sucess_graph(songs1980, songs1990, songs2000, songs2010)
-    #create_title_sucess_graph(songs1980, songs1990, songs2000, songs2010)
+    #create_artist_sucess_graph(songs1980, songs1990, songs2000, songs2010)
+    create_title_sucess_graph(songs1980, songs1990, songs2000, songs2010)
 main()
 
 

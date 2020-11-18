@@ -116,13 +116,13 @@ def create_artist_sucess_graph(file1, file2, file3, file4):
     plt.show()
 
 def create_popular_letters_graph(dict1, dict2, dict3, dict4):
-    #x1, y1, x2, y2, x3, y3, x4, y4 = orginize_data(file1, file2, file3, file4, get_freqs_data, "title")
+    x1, y1, x2, y2, x3, y3, x4, y4 = orginize_data(file1, file2, file3, file4, get_data, "title")
     x1 = ["a", "b", "c", "d"]
     y1 = [6, 7, 9, 8]
     plt.barh(x1, y1)
-    #plt.bar(x2, y2, color = "green", label='Songs from the 1990s')
-    #plt.bar(x3, y3, color = "red", label='Songs from the 2000s')
-    #plt.bar(x4, y4, color = "teal", label='Songs from the 2010s')
+    plt.bar(x2, y2, color = "green", label='Songs from the 1990s')
+    plt.bar(x3, y3, color = "red", label='Songs from the 2000s')
+    plt.bar(x4, y4, color = "teal", label='Songs from the 2010s')
     plt.legend()
     plt.show()
 

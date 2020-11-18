@@ -53,22 +53,25 @@ def sort_freqs(freqs):
         letters.append(entry)
     return(sorted(letters, reverse = True))
 
-def get_freqs_data(file, option):
-    letters = []
-    weeks = []
-    string = clean_string(get_names(file, option))
-    freqs = get_freqs(string)
-    combined_data = sort_freqs(freqs)
-    for i in range(len(combined_data)):
-        letters.append(str(combined_data[i][1]))
-        weeks.append(int(combined_data[i][0]))
-    return letters, weeks
+def get_freqs_dictionary(file, option):
+    freqs = get_freqs(clean_string(get_names(file, option)))
+    return(freqs)
+
+    # letters = []
+    # weeks = []
+    # string = clean_string(get_names(file, option))
+    # freqs = get_freqs(string)
+    # combined_data = sort_freqs(freqs)
+    # for i in range(len(combined_data)):
+    #     letters.append(str(combined_data[i][1]))
+    #     weeks.append(int(combined_data[i][0]))
+    # return letters, weeks
 
 def get_data(freqs,option):
   sorted_dict = sorted(freqs.items(),key = lambda x:x[1],reverse=True)
-  x = [v[0] for v in sorted_dict[:number]]
-  y = [v[1] for v in sorted_dict[:number]]
-  return x,y
+  letters = [v[0] for v in sorted_dict[:number]]
+  weeks = [v[1] for v in sorted_dict[:number]]
+  return (letters, weeks)
 
 
 
@@ -115,7 +118,8 @@ def create_artist_sucess_graph(file1, file2, file3, file4):
     plt.legend()
     plt.show()
 
-def create_popular_letters_graph(dict1, dict2, dict3, dict4):
+def create_popular_letters_graph(file1, file2, file3, file4):
+    dict1, dict2, dict3, dict4 = get_freqs_dictionary(file1, "title"), get_freqs_dictionary(file2, "title"), get_freqs_dictionary(file3, "title"), get_freqs_dictionary(file4, "title")
     x1, y1, x2, y2, x3, y3, x4, y4 = orginize_data(dict1, dict2, dict3, dict4, get_data, "title")
     x1 = ["a", "b", "c", "d"]
     y1 = [6, 7, 9, 8]
@@ -134,7 +138,7 @@ def main():
     #names = get_names(songs1980, songs1990, songs2000, songs2010, "artist")
     #freqs = get_freqs(clean_string(names))
     #create_title_sucess_graph(songs1980, songs1990, songs2000, songs2010)
-    create_popular_letters_graph(get_freqs(songs1980), get_freqs(songs1990), get_freqs(songs2000), get_freqs(songs2010))
+    create_popular_letters_graph(songs1980, songs1990, songs2000, songs2010)
 main()
 
 

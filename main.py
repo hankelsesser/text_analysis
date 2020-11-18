@@ -45,25 +45,25 @@ def get_freqs(string):
   freqs = {}
   for letter in string:
     if letter in freqs:
-      freqs[letter]+=1
+      freqs[letter]+=1 #add one to established entry
     else:
-      freqs[letter]=1
+      freqs[letter]=1 #create new dictionary entry
   return freqs
 
 def sort_freqs(freqs):
     letters = []
     for key in freqs:
         entry = []
-        entry.append(freqs[key])
+        entry.append(freqs[key])#appends quantity first so that it can be sorted by it
         entry.append(key)
         letters.append(entry)
     return(sorted(letters, reverse = True))
 
 def get_length_sucess_data(file, option):
     weeks = []
-    lengths = [] 
-    preference_index = 0
-    if option == "title": preference_index = 1
+    lengths = []
+    preference_index = 0 #index of the artist
+    if option == "title": preference_index = 1 #index of the title
     for song in file:
         weeks.append(song[2])
         lengths.append(len(song[preference_index]))

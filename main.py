@@ -111,9 +111,9 @@ def create_artist_sucess_graph(file1, file2, file3, file4):
 def create_popular_letters_graph(file1, file2, file3, file4):
     x1, y1, x2, y2, x3, y3, x4, y4 = orginize_data(file1, file2, file3, file4, get_freqs_data, "title")
     plt.bar(x1, y1, color = "blue", label='Songs from the 1980s')
-    plt.bar(x2, y2, color = "green", label='Songs from the 1990s')
-    plt.bar(x3, y3, color = "red", label='Songs from the 2000s')
-    plt.bar(x4, y4, color = "teal", label='Songs from the 2010s')
+    #plt.bar(x2, y2, color = "green", label='Songs from the 1990s')
+    #plt.bar(x3, y3, color = "red", label='Songs from the 2000s')
+    #plt.bar(x4, y4, color = "teal", label='Songs from the 2010s')
     plt.legend()
     plt.show()
 

@@ -64,6 +64,12 @@ def get_freqs_data(file, option):
         weeks.append(int(combined_data[i][0]))
     return letters, weeks
 
+def get_data(freqs,option):
+  sorted_dict = sorted(freqs.items(),key = lambda x:x[1],reverse=True)
+  x = [v[0] for v in sorted_dict[:number]]
+  y = [v[1] for v in sorted_dict[:number]]
+  return x,y
+
 
 
 def get_length_sucess_data(file, option):
@@ -109,7 +115,7 @@ def create_artist_sucess_graph(file1, file2, file3, file4):
     plt.legend()
     plt.show()
 
-def create_popular_letters_graph(file1, file2, file3, file4):
+def create_popular_letters_graph(dict1, dict2, dict3, dict4):
     #x1, y1, x2, y2, x3, y3, x4, y4 = orginize_data(file1, file2, file3, file4, get_freqs_data, "title")
     x1 = ["a", "b", "c", "d"]
     y1 = [6, 7, 9, 8]
@@ -128,7 +134,7 @@ def main():
     #names = get_names(songs1980, songs1990, songs2000, songs2010, "artist")
     #freqs = get_freqs(clean_string(names))
     #create_title_sucess_graph(songs1980, songs1990, songs2000, songs2010)
-    create_popular_letters_graph(songs1980, songs1990, songs2000, songs2010)
+    create_popular_letters_graph(get_freqs(songs1980), get_freqs(songs1990), get_freqs(songs2000), get_freqs(songs2010))
 main()
 
 

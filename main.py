@@ -59,16 +59,16 @@ def sort_freqs(freqs):
         letters.append(entry)
     return(sorted(letters, reverse = True))
 
-def get_freqs(file, option):
-    letters = []
-    weeks = []
-    string = clean_string(get_names(file, option))
-    freqs = get_freqs(string)
-    combined_data = sort_freqs(freqs)
-    for i in range(len(combined_data)):
-        letters.append(str(combined_data[i][1]))
-        weeks.append(int(combined_data[i][0]))
-    return letters, weeks
+# def get_freqs(file, option):
+#     letters = []
+#     weeks = []
+#     string = clean_string(get_names(file, option))
+#     freqs = get_freqs(string)
+#     combined_data = sort_freqs(freqs)
+#     for i in range(len(combined_data)):
+#         letters.append(str(combined_data[i][1]))
+#         weeks.append(int(combined_data[i][0]))
+#     return letters, weeks
 
 
 def get_length_sucess_data(file, option):

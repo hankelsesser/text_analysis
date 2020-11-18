@@ -59,27 +59,15 @@ def sort_freqs(freqs):
         letters.append(entry)
     return(sorted(letters, reverse = True))
 
-# def get_freqs(file, option):
-#     letters = []
-#     weeks = []
-#     string = clean_string(get_names(file, option))
-#     freqs = get_freqs(string)
-#     combined_data = sort_freqs(freqs)
-#     for i in range(len(combined_data)):
-#         letters.append(str(combined_data[i][1]))
-#         weeks.append(int(combined_data[i][0]))
-#     return letters, weeks
-
-
 def get_length_sucess_data(file, option):
     weeks = []
-    length = []
+    lengths = [] 
     preference_index = 0
     if option == "title": preference_index = 1
     for song in file:
         weeks.append(song[2])
-        length.append(len(song[preference_index]))
-    return(length, weeks)
+        lengths.append(len(song[preference_index]))
+    return(lengths, weeks)
 
 def orginize_data(file1, file2, file3, file4, function, option):
     x1, y1 = function(file1, option)
@@ -87,7 +75,6 @@ def orginize_data(file1, file2, file3, file4, function, option):
     x3, y3 = function(file3, option)
     x4, y4 = function(file4, option)
     return(x1, y1, x2, y2, x3, y3, x4, y4)
-
 
 def create_title_sucess_graph(file1, file2, file3, file4):
     x1, y1, x2, y2, x3, y3, x4, y4 = orginize_data(file1, file2, file3, file4, get_length_sucess_data, "title")
